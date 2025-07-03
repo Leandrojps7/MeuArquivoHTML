@@ -1,5 +1,66 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Página4</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .rating {
+            direction: rtl;
+            unicode-bidi: bidi-override;
+            display: inline-block;
+            font-size: 2em;
+        }
+        .rating input {
+            display: none;
+        }
+        .rating label {
+            color: #ccc;
+            cursor: pointer;
+        }
+        .rating input:checked ~ label,
+        .rating label:hover,
+        .rating label:hover ~ label {
+            color: gold;
+        }
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h2>Olá visitante!</h2>
+    <p>Obrigado por visitar meu site. Espero que goste do que preparei!</p>
+    <img src="https://external-preview.redd.it/LFJk0Gej4uL1ouoDJnsxLHYYmF2300gh_Ym_1cTdSOI.jpg?auto=webp&s=6f6024f76ca5b9d78cbc9d3e5752107041b46997" alt="Foto simples" class="imagem">
+
+    <h3>Avalie esta página:</h3>
+    <div class="rating">
+        <input type="radio" name="star" id="star5" value="5"><label for="star5">&#9733;</label>
+        <input type="radio" name="star" id="star4" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" name="star" id="star3" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" name="star" id="star2" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" name="star" id="star1" value="1"><label for="star1">&#9733;</label>
+    </div>
+    <div class="feedback" id="feedbackMsg"></div>
+
+    <br><br>
+    <button onclick="location.href='index.html'">Voltar para a Página Inicial</button>
+
+    <script>
+        const stars = document.querySelectorAll('.rating input');
+        const feedbackMsg = document.getElementById('feedbackMsg');
+
+        stars.forEach(star => {
+            star.addEventListener('change', () => {
+                feedbackMsg.textContent = `Você avaliou com ${star.value} estrela${star.value > 1 ? 's' : ''}. Obrigado!`;
+            });
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <title>Página4</title>
