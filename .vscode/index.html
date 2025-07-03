@@ -3,14 +3,33 @@
 <head>
    <meta charset="UTF-8">  
    <title> Minha Primeira Página</title>
-   <link rel="stylesheet"type="text/css"href="styles.css">
+   <link rel="stylesheet" href="style.css">
+   <script>
+      function validarSenha(event){
+         event.preventDefault();
+         const senha = document.getElementById('lname').value;
+         if(senha === '1234'){
+            window.location.href = 'Página3.html';
+         }else{
+            alert('Senha incorreta!');
+         }
+      }
+   </script> 
 </head>
 <body>
 <div class="container">
         <h1>Seja Muito Bem Vindo a Minha Página</h1>
         <img src="https://eufacoprogramas.com/wp-content/uploads/2018/12/5.png" alt="Imagem de exemplo" class="imagem"> 
-        <a href="index2.html">Ir para a Página 2</a>
-    <button onclick="alert('Você clicou no botão! Me dá um 10 aí Prof')">Clique aqui</button>
+        <a href="Página2.html">Ir para a Página 2</a>
+    <button onclick="alert('Você clicou no botão!')">Clique aqui</button>
   </div>
+   <form onsubmit="validarSenha(event)">
+      <label for="frame">First name:</label>
+      <input type="text" id="fname" name="fname"><br></br>
+      <label for="lname">Senha:</label>
+      <input type="password" id="lname" name="lname"><br></br>
+      <button type="submit">Login</button>
+   </form>
+   <p>Clique no botão "Login" para ir para a página "/Página3.html".</p>
  </body>
 </html>
